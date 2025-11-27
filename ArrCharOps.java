@@ -158,7 +158,7 @@ public class ArrCharOps {
      * 1. If two characters at the same position in both strings are different,
      *    the string with the smaller character is considered lexicographically smaller.
      * 2. If all characters in the shorter string match the corresponding characters
-     *    in the longer string, the shorter string is considered lexicographically smaller.
+     *    in the longer string, the shorter string is considered lexicographically smaller. 
      * 3. If both strings have the same characters and the same length, they are considered equal.
      * 
      * Examples:
@@ -175,7 +175,34 @@ public class ArrCharOps {
      *         return -2 if there is an error with the input.
      */
     public static int compareTo(String str1, String str2) {
-        // Replace the following statement with your code
-        return 0;
+        if (str1 == null || str2 == null) {
+        return -2; 
     }
+
+    int minLength = 0;
+    if (str1.length() <= str2.length()) {
+        minLength = str1.length();
+    } else {
+        minLength = str2.length();
+    }
+    for (int i = 0; i < minLength; i++) {
+        char c1 = str1.charAt(i);
+        char c2 = str2.charAt(i);
+        if (c1 < c2) {
+            return -1;
+        } else if (c1 > c2) {
+            return 1;
+        } 
+    if (str1.length() <= str2.length()) { 
+            return -1; 
+        } else if (str1.length() >= str2.length()) {
+            return 1;
+        } else {
+            return 0;
+        }
+        
+    }
+
+    
 }
+    
