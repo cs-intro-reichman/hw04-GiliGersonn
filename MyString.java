@@ -33,13 +33,19 @@ public class MyString {
     }
 
     /** If str1 contains str2, returns true; otherwise returns false. */
-    public static boolean contains(String str1, String str2) {
+   public static boolean contains(String str1, String str2) {
+
+    if (str2.length() == 0) {
+        return true;
+    }
 
     if (str2.length() > str1.length()) {
         return false;
     }
+
     boolean isSub;
     int lastIndex = str1.length() - str2.length() + 1;
+
     for (int i = 0; i < lastIndex; i++) {
         if (str2.charAt(0) == str1.charAt(i)) {
             isSub = true;
@@ -57,4 +63,3 @@ public class MyString {
     return false;
 }
 }
-
